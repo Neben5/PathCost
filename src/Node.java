@@ -6,14 +6,13 @@ public class Node {
     public ArrayList<Integer> targets = new ArrayList<>();
     public ArrayList<Integer> costs = new ArrayList<>();
 
-    Node(){
+    Node() {
         super();
     }
 
     public void addEdge(int target, int cost) {
         targets.add(target);
         costs.add(cost);
-        System.out.println(targets.size());
     }
 
     public Integer[] getTargets() {

@@ -15,8 +15,6 @@ public class Main {
             edges[i - 1] = lines[i];
         }
         Searcher searcher = new Searcher(edges, target);
-        System.out.println("Target: " + target);
-        System.out.println("Solution: " + searcher.search(1, 1));
-
+        System.out.println(searcher.search(1, 1));
     }
 }
