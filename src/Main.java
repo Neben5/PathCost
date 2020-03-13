@@ -8,6 +8,10 @@ public class Main {
     private int target;
     private int vertices;
 
+    /**
+     * Converts input file to adjacency matrix, then prints out cost of shortest
+     * path to target node using Dijkstra's algorithm in ShortestPath
+     */
     Main() throws Exception {
         int[][] lines = Reader.read();
         target = lines[0][0];
@@ -23,14 +27,14 @@ public class Main {
         int[][] graph = new int[vertices][vertices];
         for (int i = 0; i < vertices; i++) {
             for (int j = 0; j < vertices; j++) {
-                graph[i][j] = Integer.MAX_VALUE-1000000;
+                graph[i][j] = Integer.MAX_VALUE - 1000000;
             }
         }
         for (int i = 0; i < edges.length; i++) {
             int[] currentEdge = edges[i];
-            if (currentEdge[2] < graph[currentEdge[0]-1][currentEdge[1]-1]) {
-                graph[currentEdge[0]-1][currentEdge[1]-1] = currentEdge[2];
-                graph[currentEdge[1]-1][currentEdge[0]-1] = currentEdge[2];
+            if (currentEdge[2] < graph[currentEdge[0] - 1][currentEdge[1] - 1]) {
+                graph[currentEdge[0] - 1][currentEdge[1] - 1] = currentEdge[2];
+                graph[currentEdge[1] - 1][currentEdge[0] - 1] = currentEdge[2];
             }
         }
         ShortestPath path = new ShortestPath(vertices);
